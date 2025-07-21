@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- Navigation placeholder (non-functional) -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">EduMax Admin</a>
@@ -18,50 +18,39 @@
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">News</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Settings</a>
-        </li>
-      </ul>
-    </div>
   </div>
 </nav>
 
-<!-- Main Content -->
 <main class="container my-5">
-  <h1 class="mb-4">Edit News Item</h1>
-
+  <h1>Edit News Item</h1>
   <form method="POST" action="https://students.open.ac.uk/mct/tm252/reflect/reflect.php">
-    <input type="hidden" name="itemID" value="10002000-3000-123456abcdef" />
+    <input type="hidden" name="itemID" value="10002000-3000-123456abcdef">
 
     <div class="mb-3">
-      <label for="newsTitle" class="form-label">Title</label>
-      <input type="text" id="newsTitle" name="title" class="form-control"
-             value="EduMax Launches New Portal" required />
+      <label for="fullName" class="form-label">Full Name</label>
+      <input type="text" id="fullName" name="fullName" class="form-control" value="Andrea Fenwick" required>
     </div>
 
     <div class="mb-3">
-      <label for="newsContent" class="form-label">Content</label>
-      <textarea id="newsContent" name="content" class="form-control" rows="5" required>
-The new portal offers enhanced features for students and staff.
+      <label for="subject" class="form-label">Subject (max 5 words)</label>
+      <input type="text" id="subject" name="subject" class="form-control" maxlength="50" value="Lesson cancelled" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="showFrom" class="form-label">Date for First Showing</label>
+      <input type="date" id="showFrom" name="dateStart" class="form-control" value="2024-09-28" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="showTo" class="form-label">Date for Last Showing</label>
+      <input type="date" id="showTo" name="dateEnd" class="form-control" value="2024-10-15" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="content" class="form-label">News Content (max 200 words)</label>
+      <textarea id="content" name="content" class="form-control" rows="5" maxlength="2000" required>
+Python Module 1 Lesson 1 is cancelled.
         </textarea>
-    </div>
-
-    <div class="mb-3">
-      <label for="newsDate" class="form-label">Publish Date</label>
-      <input type="date" id="newsDate" name="publishDate" class="form-control" value="2025-07-01" />
-    </div>
-
-    <div class="mb-3">
-      <label for="newsAuthor" class="form-label">Author</label>
-      <input type="text" id="newsAuthor" name="author" class="form-control" value="Admin User" />
     </div>
 
     <button type="submit" class="btn btn-primary">Save Changes</button>
